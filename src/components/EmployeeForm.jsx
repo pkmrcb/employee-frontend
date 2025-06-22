@@ -15,7 +15,6 @@ export default function EmployeeForm({ onSave, editingEmployee }) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Send password only when adding a new employee
     if (!editingEmployee) {
       onSave(form);
     } else {
@@ -26,8 +25,8 @@ export default function EmployeeForm({ onSave, editingEmployee }) {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="bg-white p-6 rounded-lg shadow space-y-4">
-      <h2 className="text-xl font-semibold">
+    <form onSubmit={handleSubmit} className="bg-white p-6 rounded-lg shadow space-y-4 w-full max-w-2xl mx-auto">
+      <h2 className="text-xl font-semibold text-center">
         {editingEmployee ? 'Edit Employee' : 'Add Employee'}
       </h2>
 
@@ -59,7 +58,6 @@ export default function EmployeeForm({ onSave, editingEmployee }) {
         required
       />
 
-      {/* Show password only for adding new employee */}
       {!editingEmployee && (
         <input
           name="password"
@@ -72,7 +70,7 @@ export default function EmployeeForm({ onSave, editingEmployee }) {
         />
       )}
 
-      <button className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">
+      <button className="w-full bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">
         {editingEmployee ? 'Update' : 'Add'}
       </button>
     </form>

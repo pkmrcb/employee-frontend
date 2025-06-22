@@ -10,16 +10,16 @@ export default function Navbar() {
 
   return (
     <header className="bg-white shadow-lg w-full border-b border-gray-200 sticky top-0 z-50">
-      <div className="max-w-screen-xl mx-auto px-6 py-3 flex justify-between items-center">
-        <Link to="/" className="text-3xl font-extrabold text-blue-700 tracking-wide">
+      <div className="max-w-screen-xl mx-auto px-4 sm:px-6 py-3 flex justify-between items-center flex-wrap gap-4">
+        <Link to="/" className="text-2xl font-extrabold text-blue-700 tracking-wide">
           Employee<span className="text-indigo-500">Manager</span>
         </Link>
-        <nav className="flex items-center space-x-6">
+        <nav className="flex flex-wrap items-center gap-4">
           {token ? (
             <>
               <Link to="/dashboard" className="text-gray-600 hover:text-indigo-600">Dashboard</Link>
               <Link to="/profile" className="text-gray-600 hover:text-indigo-600">Profile</Link>
-              <button onClick={logout} className="bg-red-500 hover:bg-red-600 text-white px-5 py-2 rounded-lg">Logout</button>
+              <button onClick={logout} className="bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded-lg">Logout</button>
             </>
           ) : (
             <>

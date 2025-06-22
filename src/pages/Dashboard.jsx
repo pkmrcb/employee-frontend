@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import {jwtDecode} from 'jwt-decode';
+import { jwtDecode } from 'jwt-decode';
 import API from '../utils/api';
 import EmployeeForm from '../components/EmployeeForm';
 import EmployeeList from '../components/EmployeeList';
@@ -50,19 +50,19 @@ export default function Dashboard() {
   }, [role]);
 
   return (
-    <div className="p-6 bg-gray-100 min-h-screen">
-      <div className="max-w-4xl mx-auto">
+    <div className="p-4 sm:p-6 bg-gray-100 min-h-screen">
+      <div className="max-w-6xl mx-auto w-full">
         {role === 'admin' ? (
-          <>
+          <div className="space-y-6">
             <EmployeeForm onSave={handleSave} editingEmployee={editingEmployee} />
             <EmployeeList
               employees={employees}
               onEdit={handleEdit}
               onDelete={handleDelete}
             />
-          </>
+          </div>
         ) : (
-          <div className="text-center text-xl text-red-500 font-semibold">
+          <div className="text-center text-lg sm:text-xl text-red-500 font-semibold">
             You do not have permission to view this page.
           </div>
         )}
